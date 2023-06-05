@@ -2,7 +2,7 @@
 
 # Project Setup
 
-This project is set up using NativeBase TypeScript.
+This project is set up using NativeBase TypeScript and expo.
 
 ## Installation
 
