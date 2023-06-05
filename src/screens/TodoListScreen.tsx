@@ -53,6 +53,15 @@ const TodoListScreen = () => {
       setTodoText("");
       // setTodoDesc("");
       setId("");
+      toast.show({
+        render: () => {
+          return (
+            <Box bg="green.500" px="2" py="1" rounded="sm" mb={5}>
+              Todo added successfully
+            </Box>
+          );
+        },
+      });
     } else {
       toast.show({
         render: () => {
@@ -82,6 +91,15 @@ const TodoListScreen = () => {
         status: !item.status,
       })
     );
+    toast.show({
+      render: () => {
+        return (
+          <Box bg="pink.500" px="2" py="1" rounded="sm" mb={5}>
+            Todo status changed successfully
+          </Box>
+        );
+      },
+    });
   };
 
   // it's used to update todo list
@@ -98,12 +116,30 @@ const TodoListScreen = () => {
       setTodoText("");
       setStatus(false);
       setId("");
+      toast.show({
+        render: () => {
+          return (
+            <Box bg="green.500" px="2" py="1" rounded="sm" mb={5}>
+              Todo updated successfully
+            </Box>
+          );
+        },
+      });
     }
   };
 
   // it's used to delete todo list
   const handleDeleteTodo = (id: string) => {
     dispatch(deleteTodo(id));
+    toast.show({
+      render: () => {
+        return (
+          <Box bg="red.500" px="2" py="1" rounded="sm" mb={5}>
+            Todo deleted successfully
+          </Box>
+        );
+      },
+    });
   };
 
   // todo card ui
